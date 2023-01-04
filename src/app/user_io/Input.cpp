@@ -3,6 +3,8 @@
 //
 
 #include <unordered_map>
+#include <algorithm>
+#include <cctype>
 #include "Input.h"
 #include "../Actions.h"
 
@@ -12,32 +14,34 @@ namespace user_io {
     }
 
     void dispatchActionCheck(const game::State &state, std::string_view str) {
+        std::string inputToLowerCase {str};
+        std::transform(inputToLowerCase.begin(), inputToLowerCase.end(), inputToLowerCase.begin(), ::tolower);
+
         if (state.getInMainMenu()) {
-            processMainMenuInput(str);
+            processMainMenuInput(inputToLowerCase);
             return;
         }
 
         if (state.getInMenu()) {
-            processMenuInput(str);
+            processMenuInput(inputToLowerCase);
             return;
         }
 
         if (state.getInOptions()) {
-            processOptionsInput(str);
+            processOptionsInput(inputToLowerCase);
             return;
         }
 
         if (state.getInGame()) {
-            processGameInput(str);
+            processGameInput(inputToLowerCase);
             return;
         }
 
         if (state.getInBattle()) {
-            processBattleInput(str);
+            processBattleInput(inputToLowerCase);
             return;
         }
     }
-
 
     void processMainMenuInput(std::string_view str) {
         std::unordered_map<std::string, ValidActionMainMenu> actionMap = {
@@ -121,8 +125,6 @@ namespace user_io {
             case ValidActionMenu::resume:
                 // resume game
                 break;
-
-
         }
     }
 }

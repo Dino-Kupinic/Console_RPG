@@ -72,6 +72,23 @@ namespace user_io {
         user_io::checkMapForInputValue(str, actionMap, &evaluateMenuInput);
     }
 
+    void processGameInput(std::string_view str) {
+        // TODO: decide how to handle
+        // enum class ValidActionMapMovement {};
+        // enum class ValidActionMapObjects {};
+    }
+
+    void processBattleInput(std::string_view str) {
+        std::unordered_map<std::string, ValidActionBattle> actionMap = {
+                {"flee", ValidActionBattle::flee},
+                {"attack", ValidActionBattle::attack},
+                {"defend", ValidActionBattle::defend},
+                {"item", ValidActionBattle::item}
+        };
+
+        user_io::checkMapForInputValue(str, actionMap, &evaluateBattleInput);
+    }
+
     template <typename T>
     void checkMapForInputValue(
             std::string_view str,
@@ -127,4 +144,29 @@ namespace user_io {
                 break;
         }
     }
+
+    void evaluateGameInput(ValidActionMapMovement action) {
+        switch (action) {
+
+        }
+    }
+
+    void evaluateBattleInput(ValidActionBattle action) {
+        switch (action) {
+            case ValidActionBattle::flee:
+                // exit battle and back to game/map
+                break;
+            case ValidActionBattle::attack:
+                // attack the enemy
+                break;
+            case ValidActionBattle::defend:
+                // reduce damage taken for 1 round
+                break;
+            case ValidActionBattle::item:
+                // open the item menu and choose an item
+                break;
+        }
+    }
+
+
 }

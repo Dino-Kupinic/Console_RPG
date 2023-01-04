@@ -6,6 +6,7 @@
 #define CONSOLE_RPG_STATE_H
 
 namespace game {
+
     class State {
     public:
         State()
@@ -17,11 +18,12 @@ namespace game {
         {
         }
 
-        [[nodiscard]] bool getInMainMenu() const { return inMainMenu_; }
-        [[nodiscard]] bool getInOptions() const { return inOptions_; }
-        [[nodiscard]] bool getInMenu() const { return inMenu_; }
-        [[nodiscard]] bool getInGame() const { return inGame_; }
-        [[nodiscard]] bool getInBattle() const { return inBattle_; }
+        [[nodiscard]] bool getInMainMenu()  const { return inMainMenu_; }
+        [[nodiscard]] bool getInOptions()   const { return inOptions_; }
+        [[nodiscard]] bool getInMenu()      const { return inMenu_; }
+        [[nodiscard]] bool getInGame()      const { return inGame_; }
+        [[nodiscard]] bool getInBattle()    const { return inBattle_; }
+
     private:
         bool inMainMenu_;
         bool inOptions_;

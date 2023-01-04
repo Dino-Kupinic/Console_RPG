@@ -8,8 +8,6 @@
 #include <iostream>
 
 namespace user_io {
-    enum class ValidActionMenu {};
-    enum class ValidActionGame {};
 
     class Command {
     public:

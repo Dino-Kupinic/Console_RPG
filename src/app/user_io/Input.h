@@ -15,11 +15,14 @@ namespace user_io {
         std::string getInput() { return input_; }
         void setInput(std::string_view in);
 
-        bool checkValidInput();
     private:
         std::string input_;
     };
 
+    bool checkValidMainMenuInput();
+    bool checkValidMenuInput();
+    bool checkValidGameInput();
+    bool checkValidBattleInput();
 }
 
 

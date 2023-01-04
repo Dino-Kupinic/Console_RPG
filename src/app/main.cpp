@@ -9,6 +9,9 @@ int main() {
     user_io::Command command {};
     std::cout << command.getAction();
 
+    int a;
+    std::cin >> a;
+
 
     return 0;
 }

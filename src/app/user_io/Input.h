@@ -23,19 +23,28 @@ namespace user_io {
         std::string input_;
     };
 
+    template <typename T>
     void checkMapForInputValue(
             std::string_view str,
-            const std::unordered_map<std::string, ValidActionMenu> &actionMap,
-            void (*func)(ValidActionMenu)
+            const std::unordered_map<std::string, T> &actionMap,
+            void (*func)(T enumeration)
     );
 
     void processMainMenuInput(std::string_view str);
-    void evaluateMainMenuInput(ValidActionMenu action);
+    void evaluateMainMenuInput(ValidActionMainMenu action);
 
     void processOptionsInput(std::string_view str);
     void evaluateOptionsInput(ValidActionOptions action);
-    bool checkValidGameInput();
-    bool checkValidBattleInput();
+
+    void processMenuInput(std::string_view str);
+    void evaluateMenuInput(ValidActionMenu action);
+
+    void processGameInput(std::string_view str);
+    void evaluateGameInput(ValidActionMapMovement action);
+
+    void processBattleInput(std::string_view str);
+    void evaluateBattleInput(ValidActionBattle action);
+
 }
 
 

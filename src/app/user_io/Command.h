@@ -6,11 +6,15 @@
 #define CONSOLE_RPG_COMMAND_H
 
 #include <iostream>
+#include <unordered_map>
+#include "../Actions.h"
+#include "../Equipment/Equipment.h"
 
 namespace user_io {
 
     class Command {
     public:
+        /*
         Command() : action_(), object_() {}
         Command(std::string_view act, std::string_view obj) : action_(act), object_(obj) {}
 
@@ -18,10 +22,10 @@ namespace user_io {
         [[nodiscard]] std::string getObject() const { return object_; }
         void setAction(std::string_view act);
         void setObject(std::string_view obj);
-
+        */
     private:
-        std::string action_;
-        std::string object_;
+        ValidActionGame action_;
+        Equipment object_;
     };
 
 }

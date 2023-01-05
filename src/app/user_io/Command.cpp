@@ -5,6 +5,7 @@
 #include "Command.h"
 
 namespace user_io {
+    /*
     void Command::setAction(std::string_view act) {
         action_ = act;
     }
@@ -12,4 +13,5 @@ namespace user_io {
     void Command::setObject(std::string_view obj) {
         object_ = obj;
     }
+     */
 }

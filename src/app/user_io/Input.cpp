@@ -37,7 +37,7 @@ namespace user_io {
     }
 
     void processMainMenuInput(std::string_view str) {
-        std::unordered_map<std::string, ValidActionMainMenu> actionMap = {
+        std::unordered_map<std::string, ValidActionMainMenu> actionMap {
                 {"exit",    ValidActionMainMenu::quit},
                 {"play",    ValidActionMainMenu::play},
                 {"options", ValidActionMainMenu::options},
@@ -48,7 +48,7 @@ namespace user_io {
     }
 
     void processOptionsInput(std::string_view str) {
-        std::unordered_map<std::string, ValidActionOptions> actionMap = {
+        std::unordered_map<std::string, ValidActionOptions> actionMap {
                 {"exit", ValidActionOptions::exit}
         };
 
@@ -56,7 +56,7 @@ namespace user_io {
     }
 
     void processMenuInput(std::string_view str) {
-        std::unordered_map<std::string, ValidActionMenu> actionMap = {
+        std::unordered_map<std::string, ValidActionMenu> actionMap {
                 {"exit", ValidActionMenu::exit},
                 {"save", ValidActionMenu::save},
                 {"resume", ValidActionMenu::resume}
@@ -66,7 +66,7 @@ namespace user_io {
     }
 
     void processGameInput(std::string_view str) {
-        std::unordered_map<std::string, ValidActionGame> actionMap = {
+        std::unordered_map<std::string, ValidActionGame> actionMap {
                 {"go", ValidActionGame::go},
                 {"run", ValidActionGame::run},
                 {"talk", ValidActionGame::talk},
@@ -78,7 +78,7 @@ namespace user_io {
     }
 
     void processBattleInput(std::string_view str) {
-        std::unordered_map<std::string, ValidActionBattle> actionMap = {
+        std::unordered_map<std::string, ValidActionBattle> actionMap {
                 {"flee", ValidActionBattle::flee},
                 {"attack", ValidActionBattle::attack},
                 {"defend", ValidActionBattle::defend},

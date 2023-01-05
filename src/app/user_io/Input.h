@@ -12,7 +12,8 @@
 namespace user_io {
     class Input {
     public:
-        Input() : input_()
+        Input()
+                : input_()
         {
         }
 

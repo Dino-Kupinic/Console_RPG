@@ -1,17 +1,13 @@
 #include <iostream>
 
 #include "user_io/Command.h"
+#include "game/State.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    game::GameState a = game::State::getInstance().getState();
 
+    if (a == game::GameState::MAIN_MENU) {
 
-    user_io::Command command {};
-    std::cout << command.getAction();
-
-    int a;
-    std::cin >> a;
-
-
+    }
     return 0;
 }

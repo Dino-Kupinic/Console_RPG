@@ -34,7 +34,6 @@ namespace user_io {
                 processBattleInput(inputToLowerCase);
                 break;
         }
-
     }
 
     void processMainMenuInput(std::string_view str) {
@@ -67,9 +66,15 @@ namespace user_io {
     }
 
     void processGameInput(std::string_view str) {
-        // TODO: decide how to handle
-        // enum class ValidActionMapMovement {};
-        // enum class ValidActionMapObjects {};
+        std::unordered_map<std::string, ValidActionGame> actionMap = {
+                {"go", ValidActionGame::go},
+                {"run", ValidActionGame::run},
+                {"talk", ValidActionGame::talk},
+                {"fight", ValidActionGame::fight},
+                {"ignore", ValidActionGame::ignore}
+        };
+
+        user_io::checkMapForInputValue(str, actionMap, &evaluateGameInput);
     }
 
     void processBattleInput(std::string_view str) {
@@ -139,9 +144,24 @@ namespace user_io {
         }
     }
 
-    void evaluateGameInput(ValidActionMapMovement action) {
+    void evaluateGameInput(ValidActionGame action) {
         switch (action) {
-
+            case ValidActionGame::go:
+                // walk slower but don't consume stamina
+                // You might not make it in time for an event
+                break;
+            case ValidActionGame::run:
+                // get fast somewhere and consume stamina
+                break;
+            case ValidActionGame::talk:
+                // talk with an NPC
+                break;
+            case ValidActionGame::fight:
+                // init a fight with NPC/Monster etc.
+                break;
+            case ValidActionGame::ignore:
+                // Ignore quest by NPC
+                break;
         }
     }
 

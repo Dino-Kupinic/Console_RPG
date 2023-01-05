@@ -14,11 +14,10 @@ namespace user_io {
         Command() : action_(), object_() {}
         Command(std::string_view act, std::string_view obj) : action_(act), object_(obj) {}
 
-        std::string getAction() const { return action_; }
-        std::string getObject() const { return object_; }
+        [[nodiscard]] std::string getAction() const { return action_; }
+        [[nodiscard]] std::string getObject() const { return object_; }
         void setAction(std::string_view act);
         void setObject(std::string_view obj);
-
 
     private:
         std::string action_;

@@ -8,8 +8,7 @@
 enum class ValidActionMainMenu {quit, play, options, credits};
 enum class ValidActionOptions {exit}; // more options later
 enum class ValidActionMenu {exit, save, resume};
-enum class ValidActionMapMovement {};
-enum class ValidActionMapObjects {};
+enum class ValidActionGame{go, run, talk, fight, ignore};
 enum class ValidActionBattle {flee, attack, defend, item};
 
 #endif //CONSOLE_RPG_ACTIONS_H

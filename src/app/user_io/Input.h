@@ -40,7 +40,7 @@ namespace user_io {
     void evaluateMenuInput(ValidActionMenu action);
 
     void processGameInput(std::string_view str);
-    void evaluateGameInput(ValidActionMapMovement action);
+    void evaluateGameInput(ValidActionGame action);
 
     void processBattleInput(std::string_view str);
     void evaluateBattleInput(ValidActionBattle action);

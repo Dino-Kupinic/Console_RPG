@@ -13,34 +13,28 @@ namespace user_io {
         input_ = in;
     }
 
-    void dispatchActionCheck(const game::State &state, std::string_view str) {
+    void dispatchActionCheck(std::string_view str) {
         std::string inputToLowerCase {str};
         std::transform(inputToLowerCase.begin(), inputToLowerCase.end(), inputToLowerCase.begin(), ::tolower);
 
-        if (state.getInMainMenu()) {
-            processMainMenuInput(inputToLowerCase);
-            return;
+        switch (game::State::getInstance().getState()) {
+            case game::GameState::MAIN_MENU:
+                processMainMenuInput(inputToLowerCase);
+                break;
+            case game::GameState::OPTIONS:
+                processOptionsInput(inputToLowerCase);
+                break;
+            case game::GameState::MENU:
+                processMenuInput(inputToLowerCase);
+                break;
+            case game::GameState::GAME:
+                processGameInput(inputToLowerCase);
+                break;
+            case game::GameState::BATTLE:
+                processBattleInput(inputToLowerCase);
+                break;
         }
 
-        if (state.getInMenu()) {
-            processMenuInput(inputToLowerCase);
-            return;
-        }
-
-        if (state.getInOptions()) {
-            processOptionsInput(inputToLowerCase);
-            return;
-        }
-
-        if (state.getInGame()) {
-            processGameInput(inputToLowerCase);
-            return;
-        }
-
-        if (state.getInBattle()) {
-            processBattleInput(inputToLowerCase);
-            return;
-        }
     }
 
     void processMainMenuInput(std::string_view str) {

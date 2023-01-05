@@ -7,29 +7,35 @@
 
 namespace game {
 
+    enum class GameState {
+        MAIN_MENU,
+        OPTIONS,
+        MENU,
+        GAME,
+        BATTLE
+    };
+
     class State {
     public:
-        State()
-            : inMainMenu_(false)
-            , inOptions_(false)
-            , inMenu_(false)
-            , inGame_(false)
-            , inBattle_(false)
-        {
+        static State& getInstance() {
+            static State instance;
+            return instance;
         }
 
-        [[nodiscard]] bool getInMainMenu()  const { return inMainMenu_; }
-        [[nodiscard]] bool getInOptions()   const { return inOptions_; }
-        [[nodiscard]] bool getInMenu()      const { return inMenu_; }
-        [[nodiscard]] bool getInGame()      const { return inGame_; }
-        [[nodiscard]] bool getInBattle()    const { return inBattle_; }
+        [[nodiscard]] GameState getState() const {
+            return state_;
+        }
+
+        void setState(const GameState& st) {
+            state_ = st;
+        }
 
     private:
-        bool inMainMenu_;
-        bool inOptions_;
-        bool inMenu_;
-        bool inGame_;
-        bool inBattle_;
+        State()
+                : state_(GameState::MAIN_MENU)
+        {
+        }
+        GameState state_;
     };
 
 }

@@ -6,12 +6,9 @@
 #include <algorithm>
 #include <cctype>
 #include "Input.h"
-#include "../Actions.h"
+#include "Actions.h"
 
 namespace user_io {
-    void Input::setInput(std::string_view in) {
-        input_ = in;
-    }
 
     void dispatchActionCheck(std::string_view str) {
         std::string inputToLowerCase {str};

@@ -2,7 +2,7 @@
 // Created by Dino on 3 Jan 2023.
 //
 
-#include "Command.h"
+#include "../include/Command.h"
 
 namespace user_io {
     /*

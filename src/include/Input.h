@@ -6,8 +6,8 @@
 #define CONSOLE_RPG_INPUT_H
 
 #include <iostream>
-#include "../game/State.h"
-#include "../Actions.h"
+#include "State.h"
+#include "Actions.h"
 
 namespace user_io {
     class Input {
@@ -17,8 +17,8 @@ namespace user_io {
         {
         }
 
-        std::string getInput() { return input_; }
-        void setInput(std::string_view in);
+        [[nodiscard]] std::string getInput() const { return input_; }
+        void setInput(std::string_view in) { input_ = in; }
 
     private:
         std::string input_;

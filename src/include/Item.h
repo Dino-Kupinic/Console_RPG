@@ -10,11 +10,13 @@
 namespace objects {
 
     class Item {
+    public:
         Item()
                 : name_(), value_(0)
         {
         }
-        Item(std::string_view str, double val)
+
+        Item(std::string_view str, int val)
                 : name_(str), value_(val)
         {
         }

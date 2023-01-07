@@ -1,0 +1,71 @@
+Console RPG
+C++
+
+Main Menu
+    -> Play
+    -> Options (exit, change music/volume (?))
+    -> Credits (exit)
+    -> Exit
+
+Menu
+    -> enter with "menu"
+        -> exit
+        -> save (json, txt, csv)
+            -> checkpoint based (?), can save at checkpoint or ignore
+
+
+Player
+    -> Level (increases all Stats + potion strength)
+        -> 1-99
+        -> XP from Enemy/Bosses
+    -> Gold
+        -> 0-9999
+        -> purchase at shops in fixed room location
+    -> HP
+    -> Mana
+    -> Stamina
+    -> Inventory
+        -> Infinite Space
+        -> Equipment
+        -> Item
+
+Shops
+    -> HP Potion
+    -> Mana Potion
+    -> Stamina Potion
+    -> Weapons/Armor
+
+Equipment
+    -> Armor
+        -> Helm
+        -> Chest
+        -> Gauntlets
+        -> Legs
+
+
+Treasure/Relic
+    -> permanent Bonus on pick up
+    -> 6 relics
+
+Map
+    -> Rooms
+        -> 8x8 Map, 40% Enemies, 4 Bosses at fixed location
+    -> Movement
+        -> go + north/south/west/east, walking past borders causes error/hints player
+
+Battle
+    -> turn-based (Pokemon, Undertale etc.)
+    -> 4 Options
+        -> Attack
+            -> Melee, simply weapon damage
+            -> Magic
+                -> choose spell
+        -> Defend (apply damage reduction for 1 round)
+        -> Item (use consumable)
+        -> Flee (move back to previous room and lose 20% of hp)
+
+Enemy
+    -> maybe draw ascii (?) or just name (?)
+    -> drops XP, Gold, weapons, Armor
+
+

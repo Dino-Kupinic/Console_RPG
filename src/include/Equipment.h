@@ -11,7 +11,7 @@
 
 namespace objects {
 
-    class Equipment {
+    class Equipment : public Item {
     public:
         Equipment()
                 : item_("", 0), broken(false)
@@ -22,9 +22,6 @@ namespace objects {
                 : item_(str, val), broken(status)
         {
         }
-
-        void initAllItems();
-        void addToItemMap();
 
     private:
         Item item_;

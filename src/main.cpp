@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "user_io/Command.h"
-#include "game/State.h"
+#include "Command.h"
+#include "State.h"
 
 int main() {
     game::GameState a = game::State::getInstance().getState();

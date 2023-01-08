@@ -30,5 +30,4 @@ namespace user_io {
 
 }
 
-
 #endif //CONSOLE_RPG_COMMAND_H

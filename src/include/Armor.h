@@ -18,10 +18,16 @@ namespace objects {
 
     class Armor : public objects::Item {
     public:
+        Armor(ArmorType type, int physicalRes, int elementRes)
+                : type_(type)
+                , physicalResistance_(physicalRes)
+                , elementResistance_(elementRes)
+        {
+        }
     private:
         ArmorType type_;
-        int resistance_;
-
+        int physicalResistance_;
+        int elementResistance_;
     };
 }
 

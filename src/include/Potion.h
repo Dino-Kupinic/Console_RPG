@@ -11,7 +11,7 @@ namespace objects {
 
     class Potion : public objects::Item{
     private:
-        Potion(int hp, int mana, int stamina)
+        Potion(const int& hp, const int& mana, const int& stamina)
                 : healthRegenValue_(hp)
                 , manaRegenValue_(mana)
                 , staminaRegenValue_(stamina)

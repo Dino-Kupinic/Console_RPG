@@ -11,7 +11,7 @@
 namespace user_io {
 
     void dispatchActionCheck(std::string_view str) {
-        std::string inputToLowerCase {str};
+        std::string inputToLowerCase{str};
         std::transform(inputToLowerCase.begin(), inputToLowerCase.end(), inputToLowerCase.begin(), ::tolower);
 
         switch (game::State::getInstance().getState()) {
@@ -51,11 +51,11 @@ namespace user_io {
 
         user_io::checkMapForInputValue(str, actionMap, &evaluateOptionsInput);
     }
-
+    
     void processMenuInput(std::string_view str) {
         std::unordered_map<std::string, ValidActionMenu> actionMap {
-                {"exit", ValidActionMenu::exit},
-                {"save", ValidActionMenu::save},
+                {"exit",   ValidActionMenu::exit},
+                {"save",   ValidActionMenu::save},
                 {"resume", ValidActionMenu::resume}
         };
 
@@ -64,10 +64,10 @@ namespace user_io {
 
     void processGameInput(std::string_view str) {
         std::unordered_map<std::string, ValidActionGame> actionMap {
-                {"go", ValidActionGame::go},
-                {"run", ValidActionGame::run},
-                {"talk", ValidActionGame::talk},
-                {"fight", ValidActionGame::fight},
+                {"go",     ValidActionGame::go},
+                {"run",    ValidActionGame::run},
+                {"talk",   ValidActionGame::talk},
+                {"fight",  ValidActionGame::fight},
                 {"ignore", ValidActionGame::ignore}
         };
 
@@ -76,22 +76,22 @@ namespace user_io {
 
     void processBattleInput(std::string_view str) {
         std::unordered_map<std::string, ValidActionBattle> actionMap {
-                {"flee", ValidActionBattle::flee},
+                {"flee",   ValidActionBattle::flee},
                 {"attack", ValidActionBattle::attack},
                 {"defend", ValidActionBattle::defend},
-                {"item", ValidActionBattle::item}
+                {"item",   ValidActionBattle::item}
         };
 
         user_io::checkMapForInputValue(str, actionMap, &evaluateBattleInput);
     }
 
-    template <typename T>
+    template<typename T>
     void checkMapForInputValue(
             std::string_view str,
             const std::unordered_map<std::string, T> &actionMap,
             void (*func)(T enumeration)
     ) {
-        std::string expectedAction {str};
+        std::string expectedAction{str};
         auto iterator = actionMap.find(expectedAction);
 
         if (iterator != actionMap.end()) {

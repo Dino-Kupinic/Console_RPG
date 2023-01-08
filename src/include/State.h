@@ -17,7 +17,7 @@ namespace game {
 
     class State {
     public:
-        static State& getInstance() {
+        static State &getInstance() {
             static State instance;
             return instance;
         }
@@ -26,7 +26,7 @@ namespace game {
             return state_;
         }
 
-        void setState(const GameState& st) {
+        void setState(const GameState &st) {
             state_ = st;
         }
 
@@ -35,6 +35,7 @@ namespace game {
                 : state_(GameState::MAIN_MENU)
         {
         }
+
         GameState state_;
     };
 

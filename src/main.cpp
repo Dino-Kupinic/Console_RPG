@@ -9,5 +9,7 @@ int main() {
     if (a == game::GameState::MAIN_MENU) {
 
     }
+    int b;
+    std::cin >> b;
     return 0;
 }

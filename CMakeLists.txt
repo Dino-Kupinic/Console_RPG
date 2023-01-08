@@ -12,11 +12,7 @@ add_executable(
         src/include/Command.h
         src/app/Input.cpp
         src/include/Input.h
-        src/app/State.cpp
         src/include/State.h
         src/include/Actions.h
-        src/app/Equipment.cpp
-        src/include/Equipment.h
-        src/app/Item.cpp
         src/include/Item.h
-        src/include/Potion.h src/include/Weapon.h src/include/Armor.h)
+        src/include/Potion.h src/include/Weapon.h src/include/Armor.h src/include/Player.h src/app/Entity.cpp src/include/Entity.h)

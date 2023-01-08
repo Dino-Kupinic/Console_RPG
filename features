@@ -35,14 +35,6 @@ Shops
     -> Stamina Potion
     -> Weapons/Armor
 
-Equipment
-    -> Armor
-        -> Helm
-        -> Chest
-        -> Gauntlets
-        -> Legs
-
-
 Treasure/Relic
     -> permanent Bonus on pick up
     -> 6 relics

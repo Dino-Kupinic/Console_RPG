@@ -8,7 +8,7 @@
 #include <iostream>
 #include <unordered_map>
 #include "Actions.h"
-#include "Equipment.h"
+#include "Item.h"
 
 namespace user_io {
 
@@ -25,7 +25,7 @@ namespace user_io {
         */
     private:
         ValidActionGame action_;
-        objects::Equipment object_;
+        objects::Item object_;
     };
 
 }

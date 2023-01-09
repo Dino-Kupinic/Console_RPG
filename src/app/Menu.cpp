@@ -15,7 +15,7 @@ namespace game {
     std::string loadTitle() {
         std::string title;
 
-        std::string file {"titleASCII.txt"};
+        std::string file {"UserInterface/titleASCII.txt"};
         std::ifstream inputStream {file};
 
         if (!inputStream) {

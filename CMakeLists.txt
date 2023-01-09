@@ -15,4 +15,4 @@ add_executable(
         src/include/State.h
         src/include/Actions.h
         src/include/Item.h
-        src/include/Potion.h src/include/Weapon.h src/include/Armor.h src/include/Player.h src/app/Entity.cpp src/include/Entity.h src/app/Menu.cpp src/include/Menu.h)
+        src/include/Potion.h src/include/Weapon.h src/include/Armor.h src/include/Player.h src/app/Entity.cpp src/include/Entity.h src/app/Menu.cpp src/include/Menu.h src/app/Window.cpp src/include/Window.h src/app/Run.cpp src/include/Run.h)

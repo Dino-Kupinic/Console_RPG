@@ -8,9 +8,12 @@
 namespace game {
 
     class Entity {
+    public:
+        
     private:
         int health;
         int mana;
+        int level;
     };
 
 }

@@ -1,12 +1,6 @@
 Console RPG
 C++
 
-Main Menu
-    -> Play
-    -> Options (exit, change music/volume (?))
-    -> Credits (exit)
-    -> Exit
-
 Menu
     -> enter with "menu"
         -> exit

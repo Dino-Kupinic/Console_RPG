@@ -6,6 +6,7 @@
 #include "Window.h"
 #include "State.h"
 #include "Menu.h"
+#include "Input.h"
 
 namespace game {
 
@@ -19,7 +20,7 @@ namespace game {
 
         }
         game::displayMenu();
-        int b;
-        std::cin >> b;
+
+        user_io::getInput();
     }
 }

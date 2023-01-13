@@ -21,13 +21,13 @@ namespace objects {
         Armor(ArmorType type, int physicalRes, int elementRes)
                 : type_(type)
                 , physicalResistance_(physicalRes)
-                , elementResistance_(elementRes)
+                , elementalResistance_(elementRes)
         {
         }
     private:
         ArmorType type_;
         int physicalResistance_;
-        int elementResistance_;
+        int elementalResistance_;
     };
 }
 

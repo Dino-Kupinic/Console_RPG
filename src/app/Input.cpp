@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <cctype>
 #include "Input.h"
-#include "Actions.h"
+#include "PossibleActions.h"
 
 namespace user_io {
 
@@ -98,7 +98,7 @@ namespace user_io {
             T actionMenu = iterator->second;
             func(actionMenu);
         } else {
-            // Invalid Action by user
+            displayInputError();
         }
     }
 
@@ -117,6 +117,7 @@ namespace user_io {
                 //exit game
                 break;
         }
+        displayInputError();
     }
 
     void evaluateOptionsInput(ValidActionOptions action) {
@@ -125,6 +126,7 @@ namespace user_io {
                 // Back to main menu
                 break;
         }
+        displayInputError();
     }
 
     void evaluateMenuInput(ValidActionMenu action) {
@@ -139,6 +141,7 @@ namespace user_io {
                 // resume game
                 break;
         }
+        displayInputError();
     }
 
     void evaluateGameInput(ValidActionGame action) {
@@ -160,6 +163,7 @@ namespace user_io {
                 // Ignore quest by NPC
                 break;
         }
+        displayInputError();
     }
 
     void evaluateBattleInput(ValidActionBattle action) {
@@ -177,6 +181,24 @@ namespace user_io {
                 // open the item menu and choose an item
                 break;
         }
+        displayInputError();
+    }
+
+    std::string getInput() {
+        displayPrompt();
+        std::string input;
+        std::getline(std::cin, input);
+        return input;
+    }
+
+    void displayPrompt() {
+        std::cout << "\n  Action >>> ";
+    }
+
+    void displayInputError() {
+        std::cout << "\n  invalid input! \n";
+        displayPrompt();
+        getInput();
     }
 
 

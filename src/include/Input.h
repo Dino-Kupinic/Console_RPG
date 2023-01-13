@@ -6,8 +6,9 @@
 #define CONSOLE_RPG_INPUT_H
 
 #include <iostream>
+#include <unordered_map>
 #include "State.h"
-#include "Actions.h"
+#include "PossibleActions.h"
 
 namespace user_io {
     class Input {
@@ -33,24 +34,23 @@ namespace user_io {
     );
 
     void processMainMenuInput(std::string_view str);
-
     void evaluateMainMenuInput(ValidActionMainMenu action);
 
     void processOptionsInput(std::string_view str);
-
     void evaluateOptionsInput(ValidActionOptions action);
 
     void processMenuInput(std::string_view str);
-
     void evaluateMenuInput(ValidActionMenu action);
 
     void processGameInput(std::string_view str);
-
     void evaluateGameInput(ValidActionGame action);
 
     void processBattleInput(std::string_view str);
-
     void evaluateBattleInput(ValidActionBattle action);
+
+    std::string getInput();
+    void displayPrompt();
+    void displayInputError();
 
 }
 

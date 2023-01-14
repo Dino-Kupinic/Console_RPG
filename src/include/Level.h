@@ -13,28 +13,41 @@ namespace game {
                 : level(1)
                 , currentExperience(0)
                 , requiredExperience(10)
+                , xpMultiplier(1.0f)
         {
         }
 
-        Level(int lvl, int currExp, int reqExp)
+        explicit Level(int lvl)
+                : level(lvl)
+                , currentExperience(0)
+                , requiredExperience(0)
+                , xpMultiplier(0)
+        {
+        }
+
+        Level(int lvl, int currExp, int reqExp, int xpMult)
                 : level(lvl)
                 , currentExperience(currExp)
                 , requiredExperience(reqExp)
+                , xpMultiplier(xpMult)
         {
         }
 
         [[nodiscard]] int getLevel() const;
         [[nodiscard]] int getCurrentExperience() const;
         [[nodiscard]] int getRequiredExperience() const;
+        [[nodiscard]] double getXpMultiplier() const;
 
         void setLevel(int lvl);
         void setCurrentExperience(int currentExp);
         void setRequiredExperience(int requiredExp);
+        void setXpMultiplier(double xpMultiplier);
 
     private:
         int level;
-        int currentExperience;
-        int requiredExperience;
+        int currentExperience{};
+        int requiredExperience{};
+        double xpMultiplier{};
     };
 }
 

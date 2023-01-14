@@ -5,15 +5,23 @@
 #ifndef CONSOLE_RPG_ENTITY_H
 #define CONSOLE_RPG_ENTITY_H
 
+#include "Level.h"
+
 namespace game {
 
     class Entity {
     public:
-        
+        Entity(int hp, int mana, int lvl)
+                : health(hp)
+                , mana(mana)
+                , level(lvl)
+        {
+        }
+
     private:
         int health;
         int mana;
-        int level;
+        Level level;
     };
 
 }

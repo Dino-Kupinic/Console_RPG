@@ -14,8 +14,6 @@ namespace objects {
         Weapon(std::string_view name,
                int physicalDmg,
                int magicDmg,
-               int fireDmg,
-               int coldDmg,
                int holyDmg,
                int darkDmg,
                double weight
@@ -23,8 +21,6 @@ namespace objects {
                 : name_(name)
                 , physicalDamage_(physicalDmg)
                 , magicDamage_(magicDmg)
-                , fireDamage_(fireDmg)
-                , coldDamage_(coldDmg)
                 , holyDamage_(holyDmg)
                 , darkDamage(darkDmg)
                 , weight(weight)
@@ -43,8 +39,6 @@ namespace objects {
 
         int physicalDamage_;
         int magicDamage_;
-        int fireDamage_;
-        int coldDamage_;
         int holyDamage_;
         int darkDamage;
 

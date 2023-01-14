@@ -8,21 +8,6 @@ Menu
             -> checkpoint based (?), can save at checkpoint or ignore
 
 
-Player
-    -> Level (increases all Stats + potion strength)
-        -> 1-99
-        -> XP from Enemy/Bosses
-    -> Gold
-        -> 0-9999
-        -> purchase at shops in fixed room location
-    -> HP
-    -> Mana
-    -> Stamina
-    -> Inventory
-        -> Infinite Space
-        -> Equipment
-        -> Item
-
 Shops
     -> HP Potion
     -> Mana Potion

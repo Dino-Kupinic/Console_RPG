@@ -7,6 +7,7 @@
 
 #include "Entity.h"
 #include "Inventory.h"
+#include "Level.h"
 
 namespace game {
 
@@ -14,13 +15,15 @@ namespace game {
     public:
         Player(Inventory& inventory)
                 : inv_(inventory)
+                , playerLevel_()
         {
         }
 
     private:
-        int gold_;
-        int stamina_;
+        Level playerLevel_;
         Inventory& inv_;
+        int stamina_;
+        int gold_;
     };
 
 }

@@ -7,6 +7,7 @@
 #include <cctype>
 #include "Input.h"
 #include "PossibleActions.h"
+#include "Navigation.h"
 
 namespace user_io {
 
@@ -37,8 +38,7 @@ namespace user_io {
         std::unordered_map<std::string, ValidActionMainMenu> actionMap {
                 {"exit",    ValidActionMainMenu::quit},
                 {"play",    ValidActionMainMenu::play},
-                {"options", ValidActionMainMenu::options},
-                {"credits", ValidActionMainMenu::credits}
+                {"options", ValidActionMainMenu::options}
         };
 
         user_io::checkMapForInputValue(str, actionMap, &evaluateMainMenuInput);
@@ -110,11 +110,8 @@ namespace user_io {
             case ValidActionMainMenu::options:
                 //display options
                 break;
-            case ValidActionMainMenu::credits:
-                //display credits
-                break;
             case ValidActionMainMenu::quit:
-                //exit game
+                MainMenu::quitGame();
                 break;
         }
         displayInputError();

@@ -17,7 +17,7 @@ namespace game {
         {
         }
 
-        explicit Level(int lvl)
+        Level(int lvl)
                 : level(lvl)
                 , currentExperience(0)
                 , requiredExperience(0)

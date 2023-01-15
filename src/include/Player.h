@@ -14,13 +14,15 @@ namespace game {
     class Player : public Entity {
     public:
         Player(Inventory& inventory)
-                : Entity()
+                : Entity(50, 10, 1)
                 , inv_(inventory)
+                , stamina_(20)
+                , gold_(0)
         {
         }
 
         void levelUp();
-        void gainExperience();
+        void gainExperience(int amount);
 
     private:
         Level playerLevel_;

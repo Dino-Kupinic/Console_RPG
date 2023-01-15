@@ -1,6 +1,10 @@
+#include <exception>
 #include "Run.h"
 
 int main() {
-    game::run();
-    return 0;
+    try {
+        game::run();
+    } catch (std::exception& e) {
+        return 0;
+    }
 }

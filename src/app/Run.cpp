@@ -11,16 +11,17 @@
 namespace game {
 
     void run() {
+        setState(GameState::MAIN_MENU);
         adjustConsoleWindow();
-
-        GameState state = State::getInstance().getState();
-
-        if (state == GameState::MAIN_MENU) {
+        if (getState() == GameState::MAIN_MENU) {
             displayMenu();
             std::string userInput {user_io::getInput()};
             user_io::dispatchActionCheck(userInput);
         }
     }
+
+
+
 
 
 }

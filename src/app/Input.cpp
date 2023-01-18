@@ -16,7 +16,7 @@ namespace user_io {
         std::string inputToLowerCase{str};
         std::transform(inputToLowerCase.begin(), inputToLowerCase.end(), inputToLowerCase.begin(), ::tolower);
 
-        switch (game::State::getInstance().getState()) {
+        switch (game::getState()) {
             case game::GameState::MAIN_MENU:
                 processMainMenuInput(inputToLowerCase);
                 break;

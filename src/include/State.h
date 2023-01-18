@@ -5,6 +5,8 @@
 #ifndef CONSOLE_RPG_STATE_H
 #define CONSOLE_RPG_STATE_H
 
+#include <iostream>
+
 namespace game {
 
     enum class GameState {
@@ -17,16 +19,18 @@ namespace game {
 
     class State {
     public:
-        static State &getInstance() {
-            static State instance;
-            return instance;
+        static State* &getInstance() {
+            if (instance_ == nullptr) {
+                instance_ = new State;
+            }
+            return instance_;
         }
 
-        [[nodiscard]] GameState getState() const {
+        [[nodiscard]] GameState getState_() const {
             return state_;
         }
 
-        void setState(const GameState &st) {
+        void setState_(const GameState &st) {
             state_ = st;
         }
 
@@ -37,8 +41,11 @@ namespace game {
         }
 
         GameState state_;
+        static State* instance_;
     };
 
+    GameState getState();
+    void setState(GameState gameState);
 }
 
 

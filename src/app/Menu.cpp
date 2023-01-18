@@ -2,13 +2,14 @@
 // Created by Dino on 8 Jan 2023.
 //
 
+#include <fstream>
 #include "Menu.h"
-#include "fstream"
+#include "Input.h"
+#include "Navigation.h"
 
 namespace game {
 
     void displayMenu() {
-
         std::cout << loadTitle();
     }
 
@@ -30,5 +31,7 @@ namespace game {
 
         return title;
     }
+
+
 
 }

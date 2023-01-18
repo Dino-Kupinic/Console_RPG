@@ -9,8 +9,11 @@ namespace game {
 
     class Level {
     public:
+        const int STARTING_LEVEL {1};
+        static constexpr int CAN_NOT_LEVELUP = 0;
+
         Level()
-                : level(1)
+                : level(STARTING_LEVEL)
                 , currentExperience(0)
                 , requiredExperience(10)
                 , xpMultiplier(1.0f)
@@ -19,9 +22,9 @@ namespace game {
 
         Level(int lvl)
                 : level(lvl)
-                , currentExperience(0)
-                , requiredExperience(0)
-                , xpMultiplier(0)
+                , currentExperience(CAN_NOT_LEVELUP)
+                , requiredExperience(CAN_NOT_LEVELUP)
+                , xpMultiplier(CAN_NOT_LEVELUP)
         {
         }
 
@@ -41,7 +44,7 @@ namespace game {
         void setLevel(int lvl);
         void setCurrentExperience(int currentExp);
         void setRequiredExperience(int requiredExp);
-        void setXpMultiplier(double xpMultiplier);
+        void setXpMultiplier(double xpMult);
 
     private:
         int level;

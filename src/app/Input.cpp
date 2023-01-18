@@ -5,13 +5,14 @@
 #include <unordered_map>
 #include <algorithm>
 #include <cctype>
+#include "Menu.h"
 #include "Input.h"
 #include "PossibleActions.h"
 #include "Navigation.h"
 
 namespace user_io {
 
-    void dispatchActionCheck(std::string_view str) {
+    void dispatchActionCheck(const std::string& str) {
         std::string inputToLowerCase{str};
         std::transform(inputToLowerCase.begin(), inputToLowerCase.end(), inputToLowerCase.begin(), ::tolower);
 
@@ -36,7 +37,7 @@ namespace user_io {
 
     void processMainMenuInput(std::string_view str) {
         std::unordered_map<std::string, ValidActionMainMenu> actionMap {
-                {"exit",    ValidActionMainMenu::quit},
+                {"quit",    ValidActionMainMenu::quit},
                 {"play",    ValidActionMainMenu::play},
                 {"options", ValidActionMainMenu::options}
         };
@@ -105,25 +106,28 @@ namespace user_io {
     void evaluateMainMenuInput(ValidActionMainMenu action) {
         switch (action) {
             case ValidActionMainMenu::play:
-                //play
+                MainMenu::play();
                 break;
             case ValidActionMainMenu::options:
-                //display options
+                MainMenu::displayOptions();
                 break;
             case ValidActionMainMenu::quit:
                 MainMenu::quitGame();
                 break;
+            default:
+                displayInputError();
         }
-        displayInputError();
     }
 
     void evaluateOptionsInput(ValidActionOptions action) {
         switch (action) {
             case ValidActionOptions::exit:
-                // Back to main menu
+                game::displayMenu();
                 break;
+            //TODO: more options
+            default:
+                displayInputError();
         }
-        displayInputError();
     }
 
     void evaluateMenuInput(ValidActionMenu action) {
@@ -137,8 +141,9 @@ namespace user_io {
             case ValidActionMenu::resume:
                 // resume game
                 break;
+            default:
+                displayInputError();
         }
-        displayInputError();
     }
 
     void evaluateGameInput(ValidActionGame action) {
@@ -159,8 +164,9 @@ namespace user_io {
             case ValidActionGame::ignore:
                 // Ignore quest by NPC
                 break;
+            default:
+                displayInputError();
         }
-        displayInputError();
     }
 
     void evaluateBattleInput(ValidActionBattle action) {
@@ -177,8 +183,9 @@ namespace user_io {
             case ValidActionBattle::item:
                 // open the item menu and choose an item
                 break;
+            default:
+                displayInputError();
         }
-        displayInputError();
     }
 
     std::string getInput() {
@@ -194,7 +201,6 @@ namespace user_io {
 
     void displayInputError() {
         std::cout << "\n  invalid input! \n";
-        displayPrompt();
         getInput();
     }
 

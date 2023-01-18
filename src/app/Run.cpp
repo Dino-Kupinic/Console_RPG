@@ -7,26 +7,20 @@
 #include "State.h"
 #include "Menu.h"
 #include "Input.h"
-#include "Navigation.h"
 
 namespace game {
 
     void run() {
-
         adjustConsoleWindow();
 
-        GameState a = State::getInstance().getState();
+        GameState state = State::getInstance().getState();
 
-        if (a == GameState::MAIN_MENU) {
+        if (state == GameState::MAIN_MENU) {
             displayMenu();
-            std::string b = user_io::getInput();
-            if (b == "quit") {
-                MainMenu::quitGame();
-            }
+            std::string userInput {user_io::getInput()};
+            user_io::dispatchActionCheck(userInput);
         }
-
-        user_io::getInput();
-
-
     }
+
+
 }

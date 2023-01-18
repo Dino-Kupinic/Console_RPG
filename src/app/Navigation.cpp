@@ -3,9 +3,12 @@
 //
 
 #include "Navigation.h"
+#include <iostream>
 
 namespace MainMenu {
     void play() {
+        int a;
+        std::cin >> a;
 
     }
 

@@ -14,6 +14,6 @@ namespace game {
     void Level::setLevel(int lvl) { level = lvl; }
     void Level::setCurrentExperience(int currentExp) { currentExperience = currentExp; }
     void Level::setRequiredExperience(int requiredExp) { requiredExperience = requiredExp; }
-    void Level::setXpMultiplier(double xpMultiplier) { Level::xpMultiplier = xpMultiplier; }
+    void Level::setXpMultiplier(double xpMult) { xpMultiplier = xpMult; }
 
 }

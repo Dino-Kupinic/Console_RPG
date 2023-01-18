@@ -26,6 +26,8 @@ namespace user_io {
         std::string input_;
     };
 
+    void dispatchActionCheck(const std::string& str);
+
     template<typename T>
     void checkMapForInputValue(
             std::string_view str,
